@@ -9,6 +9,14 @@
 <body>
   <div><%= flash[:notice] %></div>
   <div><%= flash[:error] %></div>
+  <div>
+    <% if session[:user_id].present? %>
+        Signed in as <%= User.find_by(id: session[:user_id]).username %>.
+        <%= link_to 'Sign Out', session_url, method: 'delete' %>
+    <% else %>
+        <%= link_to 'Sign In', new_session_url %>
+    <% end %>
+  </div>
 <%= yield %>
 
 </body>

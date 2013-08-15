@@ -17,10 +17,11 @@ class UsersController < ApplicationController
     @user.username = params[:username]
     @user.first_name = params[:first_name]
     @user.last_name = params[:last_name]
-    @user.password_digest = params[:password_digest]
+    @user.password = params[:password]
+    @user.password_confirmation = params[:password_confirmation]
     @user.facebook_access_token = params[:facebook_access_token]
     @user.facebook_id = params[:facebook_id]
-    
+
     if @user.save
       redirect_to users_url
     else
@@ -37,10 +38,11 @@ class UsersController < ApplicationController
     @user.username = params[:username]
     @user.first_name = params[:first_name]
     @user.last_name = params[:last_name]
-    @user.password_digest = params[:password_digest]
+    @user.password = params[:password]
+    @user.password_confirmation = params[:password_confirmation]
     @user.facebook_access_token = params[:facebook_access_token]
     @user.facebook_id = params[:facebook_id]
-    
+
     if @user.save
       redirect_to users_url
     else

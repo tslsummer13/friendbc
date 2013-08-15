@@ -8,7 +8,6 @@
       <th>Username</th>
       <th>First name</th>
       <th>Last name</th>
-      <th>Password digest</th>
       <th>Facebook access token</th>
       <th>Facebook</th>
       <th></th>
@@ -23,10 +22,9 @@
       <td><%= user.username %></td>
       <td><%= user.first_name %></td>
       <td><%= user.last_name %></td>
-      <td><%= user.password_digest %></td>
       <td><%= user.facebook_access_token %></td>
       <td><%= user.facebook_id %></td>
-  
+
       <td><%= link_to 'Show', user_url(user) %></td>
       <td><%= link_to 'Edit', edit_user_url(user) %></td>
       <td><%= link_to 'Destroy', user_url(user), method: 'delete', data: { confirm: "Do you really want to delete this user?" } %></td>

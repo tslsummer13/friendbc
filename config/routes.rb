@@ -1,4 +1,6 @@
 Friendbc::Application.routes.draw do
+  root 'users#index'
+
   # Routes for sign-in/out:
   get '/session/new', controller: 'sessions', action: 'new', as: 'new_session'
   post '/session', controller: 'sessions', action: 'create', as: 'session'

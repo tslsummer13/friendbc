@@ -6,46 +6,46 @@
   <% end %>
 <% end %>
 
-<%= form_tag(users_url, method: 'post') do %>
+<%= form_for @user do |f| %>
 
 
   <div>
-    <%= label_tag :username %><br />
-    <%= text_field_tag :username %>
+    <%= f.label :username %><br />
+    <%= f.text_field :username %>
   </div>
 
   <div>
-    <%= label_tag :first_name %><br />
-    <%= text_field_tag :first_name %>
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
   </div>
 
   <div>
-    <%= label_tag :last_name %><br />
-    <%= text_field_tag :last_name %>
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
   </div>
 
   <div>
-    <%= label_tag :password %><br />
-    <%= password_field_tag :password %>
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
   </div>
 
   <div>
-    <%= label_tag :password_confirmation %><br />
-    <%= password_field_tag :password_confirmation %>
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
   </div>
 
   <div>
-    <%= label_tag :facebook_access_token %><br />
-    <%= text_field_tag :facebook_access_token %>
+    <%= f.label :facebook_access_token %><br />
+    <%= f.text_field :facebook_access_token %>
   </div>
 
   <div>
-    <%= label_tag :facebook_id %><br />
-    <%= text_field_tag :facebook_id %>
+    <%= f.label :facebook_id %><br />
+    <%= f.text_field :facebook_id %>
   </div>
 
 
   <div>
-    <%= submit_tag "Create User" %>
+    <%= f.submit %>
   </div>
 <% end %>

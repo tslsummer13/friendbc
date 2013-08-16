@@ -17,15 +17,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    user_params = {
-      username: params[:username],
-      first_name: params[:first_name],
-      last_name: params[:last_name],
-      password: params[:password],
-      password_confirmation: params[:password_confirmation],
-      facebook_access_token: params[:facebook_access_token],
-      facebook_id: params[:facebook_id]
-    }
+    user_params = params[:user]
 
     @user = User.new(user_params)
 

@@ -34,15 +34,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user.username = params[:username]
-    @user.first_name = params[:first_name]
-    @user.last_name = params[:last_name]
-    @user.password = params[:password]
-    @user.password_confirmation = params[:password_confirmation]
-    @user.facebook_access_token = params[:facebook_access_token]
-    @user.facebook_id = params[:facebook_id]
-
-    if @user.save
+    if @user.update_attributes(user_params)
       redirect_to users_url
     else
       render 'new'

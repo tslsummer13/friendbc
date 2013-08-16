@@ -25,6 +25,9 @@
 
 <ul>
   <% @posts.each do |post| %>
-    <li><%= post['from']['name'] %> said '<%= post['message'] %>'</li>
+    <li>
+      <%= post['from']['name'] %> said '<%= post['message'] %>'
+      <%= link_to 'Click here to view video', post['link'], target: '_blank' %>
+    </li>
   <% end %>
 </ul>

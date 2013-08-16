@@ -1,28 +1,24 @@
-<h1>User #<%= @user.id %></h1>
-
-<p>
-  <b>Username:</b>
+<h1>
   <%= @user.username %>
-</p>
+  <small>
+    <%= link_to '<i class="icon-edit"></i>'.html_safe, edit_user_url(@user) %>
+    <%= link_to '<i class="icon-trash"></i>'.html_safe, @user, method: 'delete', data: { confirm: "Do you really want to delete this user?" } %>
+  </small>
+</h1>
 
-<p>
-  <b>First name:</b>
-  <%= @user.first_name %>
-</p>
+<dl>
+  <dt>First name</dt>
+  <dd><%= @user.first_name %></dd>
 
-<p>
-  <b>Last name:</b>
-  <%= @user.last_name %>
-</p>
+  <dt>First name:</dt>
+  <dd><%= @user.first_name %></dd>
 
-<p>
-  <b>Facebook access token:</b>
-  <%= @user.facebook_access_token %>
-</p>
+  <dt>Last name:</dt>
+  <dd><%= @user.last_name %></dd>
 
-<p>
-  <b>Facebook:</b>
-  <%= @user.facebook_id %>
-</p>
+  <dt>Facebook access token:</dt>
+  <dd><%= @user.facebook_access_token %></dd>
 
-
+  <dt>Facebook:</dt>
+  <dd><%= @user.facebook_id %></dd>
+</dl>

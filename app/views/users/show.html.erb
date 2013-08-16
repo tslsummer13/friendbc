@@ -22,3 +22,9 @@
   <dt>Facebook:</dt>
   <dd><%= @user.facebook_id %></dd>
 </dl>
+
+<ul>
+  <% @posts.each do |post| %>
+    <li><%= post['from']['name'] %></li>
+  <% end %>
+</ul>

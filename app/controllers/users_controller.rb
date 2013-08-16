@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 
     raw_response = open(url).read
     parsed_response = JSON.parse(raw_response)
-    @posts = parsed_response['data']
+    @posts = parsed_response['data'].select { |post| post['type'] == 'video' }
   end
 
   # GET /users/new

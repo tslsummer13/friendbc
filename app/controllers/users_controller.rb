@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    url = "https://graph.facebook.com/me/home?access_token=#{@user.facebook_access_token}"
+    url = "https://graph.facebook.com/me/home?limit=200&access_token=#{@user.facebook_access_token}"
 
     raw_response = open(url).read
     parsed_response = JSON.parse(raw_response)

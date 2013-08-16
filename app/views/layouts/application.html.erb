@@ -26,13 +26,10 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <a class="brand" href="/">Friendbc</a>
+        <%= link_to 'FriendBC', root_url, class: 'brand' %>
         <div class="nav-collapse">
           <ul class="nav">
-
-            <li><%= link_to "Home", "/" %></li>
-            <li><%= link_to "Users", "/users" %></li>
-            <li><a href="#about">About</a></li>
+            <li><%= link_to "Users", users_url %></li>
           </ul>
         </div>
       </div>

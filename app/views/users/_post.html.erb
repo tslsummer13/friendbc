@@ -16,19 +16,8 @@
       <%= link_to "Click here to watch on #{parsed_url.host} <i class=\"icon-external-link\"></i>".html_safe, post['link'], target: '_blank', class: 'btn btn-primary btn-large' %>
     <% end %>
     <% if post['comments'].present? %>
-      <% post['comments']['data'].each do |comment| %>
-        <div class="media">
-          <div class="pull-left">
-            <%= image_tag "https://graph.facebook.com/#{comment['from']['id']}/picture", class: 'media-object' %>
-          </div>
-          <div class="media-body">
-            <h4 class="media-heading">
-              <%= comment['from']['name'] %>
-              <small><%= time_ago_in_words(comment['created_time']) %> ago</small>
-            </h4>
-            <p><%= comment['message'] %></p>
-          </div>
-        </div>
+      <% post['comments']['data'].each do |the_comment| %>
+        <%= render 'comment', comment: the_comment %>
       <% end %>
     <% end %>
   </div>

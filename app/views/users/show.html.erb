@@ -23,5 +23,8 @@
   <dd><%= @user.facebook_id %></dd>
 </dl>
 
-<%= @posts %>
-
+<ul>
+  <% @posts.each do |post| %>
+    <li><%= post['message'] %></li>
+  <% end %>
+</ul>

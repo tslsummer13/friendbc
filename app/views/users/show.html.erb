@@ -25,6 +25,9 @@
 
 <ul>
   <% @posts.each do |post| %>
-    <li><%= post['message'] %></li>
+    <li>
+      <%= post['from']['name'] %>
+      <%= post['message'] %>
+    </li>
   <% end %>
 </ul>

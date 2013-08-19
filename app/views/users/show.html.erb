@@ -30,7 +30,7 @@
       <%= post['from']['name'] %>
       <%= time_ago_in_words(post['created_time']) %>
       <%= post['message'] %>
-      <%= post['link'] %>
+      <%= link_to 'Click here to watch', post['link'] %>
     </li>
   <% end %>
 </ul>

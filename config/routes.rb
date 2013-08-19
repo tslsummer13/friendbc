@@ -1,4 +1,8 @@
 Friendbc::Application.routes.draw do
+  resources :comments
+
+  resources :posts
+
   root 'users#index'
 
   # Routes for sign-in/out:

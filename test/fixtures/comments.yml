@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  commenter_name: MyString
+  commenter_facebook_id: MyString
+  message: MyString
+  created_time: MyString
+  comment_facebook_id: MyString
+  post_id: 1
+
+two:
+  commenter_name: MyString
+  commenter_facebook_id: MyString
+  message: MyString
+  created_time: MyString
+  comment_facebook_id: MyString
+  post_id: 1

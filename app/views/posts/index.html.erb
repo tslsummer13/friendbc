@@ -1,0 +1,39 @@
+<h1>Listing posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sharer name</th>
+      <th>Sharer facebook</th>
+      <th>Message</th>
+      <th>Link</th>
+      <th>Created time</th>
+      <th>Post facebook</th>
+      <th>User</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.sharer_name %></td>
+        <td><%= post.sharer_facebook_id %></td>
+        <td><%= post.message %></td>
+        <td><%= post.link %></td>
+        <td><%= post.created_time %></td>
+        <td><%= post.post_facebook_id %></td>
+        <td><%= post.user_id %></td>
+        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Post', new_post_path %>

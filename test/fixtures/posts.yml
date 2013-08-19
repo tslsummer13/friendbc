@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  sharer_name: MyString
+  sharer_facebook_id: MyString
+  message: MyString
+  link: MyString
+  created_time: MyString
+  post_facebook_id: MyString
+  user_id: 1
+
+two:
+  sharer_name: MyString
+  sharer_facebook_id: MyString
+  message: MyString
+  link: MyString
+  created_time: MyString
+  post_facebook_id: MyString
+  user_id: 1

@@ -28,6 +28,7 @@
     <li>
       <%= image_tag "https://graph.facebook.com/#{post['from']['id']}/picture" %>
       <%= post['from']['name'] %>
+      <%= post['created_time'] %>
       <%= post['message'] %>
     </li>
   <% end %>

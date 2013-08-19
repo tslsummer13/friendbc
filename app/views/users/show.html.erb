@@ -1,42 +1,34 @@
-<h1>
-  <%= @user.username %>
-  <small>
-    <%= link_to '<i class="icon-edit"></i>'.html_safe, edit_user_url(@user) %>
-    <%= link_to '<i class="icon-trash"></i>'.html_safe, @user, method: 'delete', data: { confirm: "Do you really want to delete this user?" } %>
-  </small>
-</h1>
+<div class="page-header">
+  <h1>
+    <%= @user.username %>
+    <small>
+      <%= link_to '<i class="icon-edit"></i>'.html_safe, edit_user_url(@user) %>
+      <%= link_to '<i class="icon-trash"></i>'.html_safe, @user, method: 'delete', data: { confirm: "Do you really want to delete this user?" } %>
+    </small>
+  </h1>
+</div>
 
-<dl>
-  <dt>First name</dt>
-  <dd><%= @user.first_name %></dd>
-
-  <dt>First name:</dt>
-  <dd><%= @user.first_name %></dd>
-
-  <dt>Last name:</dt>
-  <dd><%= @user.last_name %></dd>
-
-  <dt>Facebook access token:</dt>
-  <dd><%= @user.facebook_access_token %></dd>
-
-  <dt>Facebook:</dt>
-  <dd><%= @user.facebook_id %></dd>
-</dl>
-
-<ul>
+<ul class="media-list">
   <% @posts.each do |post| %>
-    <li>
-      <%= image_tag "https://graph.facebook.com/#{post['from']['id']}/picture" %>
-      <%= post['from']['name'] %>
-      <%= time_ago_in_words(post['created_time']) %>
-      <%= post['message'] %>
-      <% parsed_url = URI.parse(post['link']) %>
-      <% if parsed_url.host.include?('youtube') %>
-        <% query_params = Rack::Utils.parse_query(parsed_url.query) %>
-        <iframe width="420" height="315" src="//www.youtube.com/embed/<%= query_params['v'] %>" frameborder="0" allowfullscreen></iframe>
-      <% else %>
-        <%= link_to 'Click here to watch', post['link'], target: '_blank' %>
-      <% end %>
+    <li class="media">
+      <div class="pull-left">
+        <%= image_tag "https://graph.facebook.com/#{post['from']['id']}/picture", class: 'media-object' %>
+      </div>
+      <div class="media-body">
+        <h2 class="media-heading">
+          <%= post['from']['name'] %>
+          <small><%= time_ago_in_words(post['created_time']) %> ago</small>
+        </h2>
+        <p class="lead"><%= post['message'] %></p>
+        <% parsed_url = URI.parse(post['link']) %>
+        <% if parsed_url.host.include?('youtube') %>
+          <% query_params = Rack::Utils.parse_query(parsed_url.query) %>
+          <iframe width="853" height="505" src="//www.youtube.com/embed/<%= query_params['v'] %>" frameborder="0" allowfullscreen></iframe>
+        <% else %>
+          <%= link_to "Click here to watch on #{parsed_url.host} <i class=\"icon-external-link\"></i>".html_safe, post['link'], target: '_blank', class: 'btn btn-primary btn-large' %>
+        <% end %>
+      </div>
+      <hr>
     </li>
   <% end %>
 </ul>

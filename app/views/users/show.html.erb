@@ -26,6 +26,7 @@
 <ul>
   <% @posts.each do |post| %>
     <li>
+      <%= image_tag "https://graph.facebook.com/#{post['from']['id']}/picture" %>
       <%= post['from']['name'] %>
       <%= post['message'] %>
     </li>

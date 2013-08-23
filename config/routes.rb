@@ -1,5 +1,5 @@
 Friendbc::Application.routes.draw do
-  get '/auth/facebook' => 'auth#facebook'
+  get '/auth/facebook/callback' => 'auth#facebook', as: 'facebook_callback'
 
   resources :comments
 

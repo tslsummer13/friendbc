@@ -4,7 +4,7 @@ class AuthController < ApplicationController
   def facebook
     app_id = ENV["FRIENDBC_FACEBOOK_APP_ID"]
     app_secret = ENV["FRIENDBC_FACEBOOK_APP_SECRET"]
-    redirect_uri = "http://localhost:3000/auth/facebook"
+    redirect_uri = facebook_callback_url
     code = params[:code]
 
     endpoint_url = "https://graph.facebook.com/oauth/access_token?client_id=#{app_id}&redirect_uri=#{redirect_uri}&client_secret=#{app_secret}&code=#{code}"

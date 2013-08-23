@@ -9,6 +9,8 @@ gem 'starter_generators'
 
 gem 'whenever'
 
+gem 'omniauth-twitter', :github => 'arunagw/omniauth-twitter'
+
 # Heroku stuff
 gem 'rails_12factor', group: :production
 

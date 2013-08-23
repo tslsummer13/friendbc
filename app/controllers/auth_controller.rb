@@ -1,6 +1,12 @@
 require 'open-uri'
 
 class AuthController < ApplicationController
+  def twitter
+    logger.debug request.env['omniauth.auth'].to_yaml
+
+    redirect_to user_url(current_user)
+  end
+
   def facebook
     app_id = ENV["FRIENDBC_FACEBOOK_APP_ID"]
     app_secret = ENV["FRIENDBC_FACEBOOK_APP_SECRET"]

@@ -5,6 +5,7 @@
       <%= link_to '<i class="icon-edit"></i>'.html_safe, edit_user_url(@user) %>
       <%= link_to '<i class="icon-trash"></i>'.html_safe, @user, method: 'delete', data: { confirm: "Do you really want to delete this user?" } %>
       <%= link_to '<i class="icon-facebook"></i>'.html_safe, "https://www.facebook.com/dialog/oauth?client_id=#{ENV["FRIENDBC_FACEBOOK_APP_ID"]}&redirect_uri=#{facebook_callback_url}&scope=read_stream" %>
+      <%= link_to '<i class="icon-twitter"></i>'.html_safe, "/auth/twitter" %>
     </small>
   </h1>
 </div>

@@ -3,7 +3,7 @@ class CreatePosts < ActiveRecord::Migration
     create_table :posts do |t|
       t.string :sharer_name
       t.string :sharer_facebook_id
-      t.string :message
+      t.text :message
       t.string :link
       t.string :created_time
       t.string :post_facebook_id

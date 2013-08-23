@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130823153829) do
+ActiveRecord::Schema.define(version: 20130819180153) do
 
   create_table "comments", force: true do |t|
     t.string   "commenter_name"
     t.string   "commenter_facebook_id"
-    t.text     "message",               limit: 255
+    t.text     "message"
     t.string   "created_time"
     t.string   "comment_facebook_id"
     t.integer  "post_id"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20130823153829) do
   create_table "posts", force: true do |t|
     t.string   "sharer_name"
     t.string   "sharer_facebook_id"
-    t.text     "message",            limit: 255
+    t.text     "message"
     t.string   "link"
     t.string   "created_time"
     t.string   "post_facebook_id"

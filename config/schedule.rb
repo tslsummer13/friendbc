@@ -18,3 +18,7 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+
+every 15.minutes do
+  rake "api:facebook", environment: :development
+end

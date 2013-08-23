@@ -13,3 +13,7 @@
 
  *= require bootstrap_overrides
  */
+
+ body {
+  background: url('/assets/triangular.png');
+ }

@@ -43,10 +43,8 @@ ActiveRecord::Schema.define(version: 20130823162938) do
     t.string "password_digest"
     t.string "facebook_access_token"
     t.string "facebook_id"
-    t.string "twitter_access_token_key"
-    t.string "twitter_access_token_secret"
     t.string "twitter_access_token"
-    t.string "twitter_access_secret"
+    t.string "twitter_access_token_secret"
   end
 
 end

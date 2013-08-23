@@ -1,7 +1,9 @@
 namespace :api do
   desc "Fetch Twitter API updates for all users"
   task twitter: :environment do
-    # TODO write this logic
+    User.find_each do |user|
+      user.poll_twitter
+    end
   end
 
   desc "Fetch Facebook API updates for all users"

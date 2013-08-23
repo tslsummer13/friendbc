@@ -11,6 +11,8 @@ gem 'whenever'
 
 gem 'omniauth-twitter', :github => 'arunagw/omniauth-twitter'
 
+gem 'twitter', :git => 'https://github.com/sferik/twitter.git'
+
 # Heroku stuff
 gem 'rails_12factor', group: :production
 

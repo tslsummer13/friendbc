@@ -7,6 +7,17 @@ class User < ActiveRecord::Base
 
   has_many :posts, dependent: :destroy
 
+  def poll_twitter
+    client = Twitter::REST::Client.new do |config|
+      config.consumer_key = ENV["FRIENDBC_TWITTER_CONSUMER_KEY"]
+      config.consumer_secret = ENV["FRIENDBC_TWITTER_CONSUMER_SECRET"]
+      config.access_token = self.twitter_access_token
+      config.access_token_secret = self.twitter_access_token_secret
+    end
+
+    return client.home_timeline(count: 200)
+  end
+
   def poll_facebook
     begin
       url = "https://graph.facebook.com/me/home?access_token=#{self.facebook_access_token}&limit=200"

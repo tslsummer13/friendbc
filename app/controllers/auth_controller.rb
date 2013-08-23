@@ -17,6 +17,8 @@ class AuthController < ApplicationController
     current_user.facebook_access_token = access_token
     current_user.save
 
+    current_user.poll_facebook
+
     redirect_to user_url(current_user)
   end
 end

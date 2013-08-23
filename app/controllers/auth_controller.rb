@@ -2,7 +2,11 @@ require 'open-uri'
 
 class AuthController < ApplicationController
   def twitter
-    logger.debug request.env['omniauth.auth'].to_yaml
+    auth_hash = request.env['omniauth.auth']
+
+    current_user.twitter_access_token = auth_hash.extra.access_token.token
+    current_user.twitter_access_secret = auth_hash.extra.access_token.secret
+    current_user.save
 
     redirect_to user_url(current_user)
   end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130819180153) do
+ActiveRecord::Schema.define(version: 20130823162938) do
 
   create_table "comments", force: true do |t|
     t.string   "commenter_name"
@@ -43,6 +43,10 @@ ActiveRecord::Schema.define(version: 20130819180153) do
     t.string "password_digest"
     t.string "facebook_access_token"
     t.string "facebook_id"
+    t.string "twitter_access_token_key"
+    t.string "twitter_access_token_secret"
+    t.string "twitter_access_token"
+    t.string "twitter_access_secret"
   end
 
 end

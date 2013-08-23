@@ -5,6 +5,8 @@ gem 'rails', '4.0.0'
 
 gem 'starter_generators'
 
+gem 'whenever'
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 

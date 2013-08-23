@@ -18,7 +18,7 @@
 </head>
 <body>
 
-  <div class="navbar navbar-fixed-top">
+  <div class="navbar navbar-fixed-top navbar-inverse">
     <div class="navbar-inner">
       <div class="container">
         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -26,7 +26,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <%= link_to 'FriendBC', root_url, class: 'brand' %>
+        <%= link_to image_tag('logo.png'), root_url, class: 'brand' %>
         <div class="nav-collapse">
           <ul class="nav">
             <li><%= link_to "Users", users_url %></li>

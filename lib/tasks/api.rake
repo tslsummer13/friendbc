@@ -8,15 +8,14 @@ namespace :api do
 
   desc "Fetch Facebook API updates for all users"
   task facebook: :environment do
-    users = User.all
-
-    users.each do |user|
+    User.find_each do |user|
       begin
         url = "https://graph.facebook.com/me/home?access_token=#{user.facebook_access_token}&limit=200"
         raw_response = open(url).read
         parsed_response = JSON.parse(raw_response)
         posts = parsed_response['data'].select { |p| p['type'] == 'video' }
-      rescue
+      rescue Exception => e
+        puts e
         posts = []
       end
 

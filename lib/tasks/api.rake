@@ -1,5 +1,3 @@
-require 'open-uri'
-
 namespace :api do
   desc "Fetch Twitter API updates for all users"
   task twitter: :environment do

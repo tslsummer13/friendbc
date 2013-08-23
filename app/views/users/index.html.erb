@@ -8,8 +8,6 @@
       <th>Username</th>
       <th>First name</th>
       <th>Last name</th>
-      <th>Facebook access token</th>
-      <th>Facebook</th>
       <th></th>
       <th></th>
     </tr>
@@ -21,8 +19,6 @@
       <td><%= link_to user.username, user %></td>
       <td><%= user.first_name %></td>
       <td><%= user.last_name %></td>
-      <td><%= user.facebook_access_token %></td>
-      <td><%= user.facebook_id %></td>
       <td><%= link_to '<i class="icon-edit"></i>'.html_safe, edit_user_url(user) %></td>
       <td><%= link_to '<i class="icon-trash"></i>'.html_safe, user_url(user), method: 'delete', data: { confirm: "Do you really want to delete this user?" } %></td>
     </tr>

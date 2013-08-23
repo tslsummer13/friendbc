@@ -1,4 +1,6 @@
 Friendbc::Application.routes.draw do
+  get '/auth/facebook' => 'auth#facebook'
+
   resources :comments
 
   resources :posts
